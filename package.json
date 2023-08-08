@@ -1,0 +1,31 @@
+{
+  "name": "eusebia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "bld": "unocss \"templates/**/*.html\" --out-file static/site.css",
+    "dev": "pnpm run bld --watch",
+    "min": "pnpm run bld --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbluhmhansen/eusebia.git"
+  },
+  "author": "Dan Bluhm Hansen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danbluhmhansen/eusebia/issues"
+  },
+  "homepage": "https://github.com/danbluhmhansen/eusebia#readme",
+  "packageManager": "pnpm@8.6.12",
+  "dependencies": {
+    "@iconify-json/tabler": "^1.1.87",
+    "@unocss/cli": "^0.54.2",
+    "unocss": "^0.54.2"
+  },
+  "devDependencies": {
+    "prettier": "3.0.1",
+    "prettier-plugin-tailwindcss": "0.4.1"
+  }
+}
