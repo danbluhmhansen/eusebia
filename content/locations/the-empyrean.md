@@ -4,7 +4,7 @@ title = "The Empyrean"
 [extra]
 radius = 14
 gravity = 9.5
-population = 672418
+population = "700K"
 temperature_low = 21
 temperature_high = 27
 +++

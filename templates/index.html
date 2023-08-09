@@ -8,9 +8,9 @@
     <link rel="stylesheet" type="text/css" href="{{ get_url(path='site.css') }}" />
   </head>
 
-  <body class="dark:bg-slate-900 dark:text-white">
+  <body class="container mx-auto dark:bg-slate-900 dark:text-white sm:flex sm:flex-row">
     {% block menu %}
-    <aside class="p-4 sm:fixed sm:left-0 sm:top-0 sm:z-40 sm:h-screen sm:w-64">
+    <aside class="p-4 sm:w-1/4">
       <nav>
         <ul class="space-y-2">
           {% set index = get_section(path="_index.md") %}
@@ -47,38 +47,40 @@
       </nav>
     </aside>
     {% endblock %}
-    <main class="p-4 sm:ml-64">
+    <main class="p-4 sm:flex sm:w-3/4 sm:flex-row">
       {% if page.extra.radius or page.extra.gravity or page.extra.population or page.extra.temperature_low or
       page.extra.temperature_high %}
-      <section class="max-w-sm rounded border border-gray-200 p-6 sm:float-right">
-        <table>
-          <tbody>
-            {% if page.extra.radius %}
-            <tr>
-              <th>Radius</th>
-              <td>{{ page.extra.radius }} km</td>
-            </tr>
-            {% endif %}{% if page.extra.gravity %}
-            <tr>
-              <th>Gravity</th>
-              <td>{{ page.extra.gravity }} m/s<sup>2</sup></td>
-            </tr>
-            {% endif %}{% if page.extra.population %}
-            <tr>
-              <th>Population</th>
-              <td>{{ page.extra.population }}</td>
-            </tr>
-            {% endif %}{% if page.extra.temperature_low and page.extra.temperature_high %}
-            <tr>
-              <th>Temperature</th>
-              <td>{{ page.extra.temperature_low }} - {{ page.extra.temperature_high }} °C</td>
-            </tr>
-            {% endif %}
-          </tbody>
-        </table>
+      <section class="sm:order-last sm:w-1/3">
+        <div class="rounded border border-gray-200 p-4 sm:mx-4">
+          <table class="w-full">
+            <tbody>
+              {% if page.extra.radius %}
+              <tr>
+                <th>Radius</th>
+                <td>{{ page.extra.radius }} km</td>
+              </tr>
+              {% endif %}{% if page.extra.gravity %}
+              <tr>
+                <th>Gravity</th>
+                <td>{{ page.extra.gravity }} m/s<sup>2</sup></td>
+              </tr>
+              {% endif %}{% if page.extra.population %}
+              <tr>
+                <th>Residents</th>
+                <td>{{ page.extra.population }}</td>
+              </tr>
+              {% endif %}{% if page.extra.temperature_low and page.extra.temperature_high %}
+              <tr>
+                <th>Climate</th>
+                <td>{{ page.extra.temperature_low }} - {{ page.extra.temperature_high }} °C</td>
+              </tr>
+              {% endif %}
+            </tbody>
+          </table>
+        </div>
       </section>
       {% endif %}{% block content %}
-      <article class="prose dark:prose-invert">
+      <article class="prose dark:prose-invert sm:w-2/3">
         {% if section.content %}{{ section.content | safe }}{% endif %}{% if page.content %}{{ page.content | safe }}{%
         endif %}
       </article>
