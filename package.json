@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bld": "unocss \"templates/**/*.html\" --out-file static/site.css",
+    "bld": "unocss",
     "dev": "pnpm run bld --watch",
     "min": "pnpm run bld --minify"
   },
@@ -19,13 +19,11 @@
   },
   "homepage": "https://github.com/danbluhmhansen/eusebia#readme",
   "packageManager": "pnpm@8.6.12",
-  "dependencies": {
+  "devDependencies": {
     "@iconify-json/tabler": "^1.1.87",
     "@unocss/cli": "^0.54.2",
-    "unocss": "^0.54.2"
-  },
-  "devDependencies": {
     "prettier": "3.0.1",
-    "prettier-plugin-tailwindcss": "0.4.1"
+    "prettier-plugin-tailwindcss": "0.4.1",
+    "unocss": "^0.54.2"
   }
 }
