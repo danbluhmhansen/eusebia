@@ -1,0 +1,7 @@
+{
+  "tasks": {
+    "bld": "deno run --allow-read=templates --allow-write=static unocss.ts",
+    "dev": "deno run --allow-read=templates --allow-write=static --watch=templates unocss.ts",
+    "min": "deno run --allow-read=templates --allow-write=static unocss.ts --minify"
+  }
+}
